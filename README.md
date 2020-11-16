@@ -1,6 +1,6 @@
 # connect-four
 
-<img src="https://i.imgur.com/UtJiDcp.png" />
+<img src="https://i.imgur.com/yuWjDrp.png" />
 
 Connect Four Pseudocode
 

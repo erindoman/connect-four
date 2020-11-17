@@ -1,0 +1,96 @@
+html {
+    box-sizing: border-box
+}
+   
+*, 
+*::before,
+*::after { 
+  box-sizing: inherit;
+}
+   
+:root {
+    font-size: 62.5%
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    margin: 0;
+    background-color: gray;
+    font-family: 'Courier New', Courier, monospace;
+    grid-template-columns: 4fr 1fr; 
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-areas: 
+    "title title"
+    "grid player1box"
+    "grid player2box"
+    "grid buttons";
+}
+
+section {
+    background-color: aqua;
+    grid-area: title;
+    display: flex;
+    flex-direction: row;
+    margin: 50px 50px 0 50px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.grid {
+    grid-area: grid;
+    display: grid;
+    background-color: teal;
+    grid-template-rows: repeat(6, 10vmin);
+    grid-template-columns: repeat(7, 10vmin);
+    gap: 5px;
+    margin: 0 0 50px 50px;
+    
+}
+
+div.cell {
+    border: 3px solid black;
+    border-radius: 50%;
+    margin: 1px;
+}
+
+.player1 {
+    background-color: red;
+}
+
+.player2 {
+    background-color: yellow;
+}
+
+.player1box {
+    background-color: tomato;
+    gap: 5px;
+    width: 300px;
+    margin: 0 50px 0 0;
+}
+
+.player2box {
+    background-color: green;
+    gap: 5px;
+    width: 300px;
+    margin: 0 50px 0 0;
+}
+
+.restart {
+    background-color: red;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.buttons {
+    background-color: indigo;
+
+    gap: 5px;
+    height: 100px;
+    margin: 0 50px 50px 0;
+}

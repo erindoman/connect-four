@@ -9,14 +9,15 @@
 </head>
 <body>
 
+<section class="wrapper">
+    
 <section class="title">
     <h1>Connect Four</h1>
-    <h2 id="turn-message">Player <span class="current-player"></span> Turn</h2>
-    <h2 id="result"></h2>
-    <button class="restart">restart</button>
 </section>
+    <h2 id="turn-message">Go Player <span class="current-player"></span></h2>
+    <h2 id="result"></h2>
 
-<div class="grid">
+    <div class="grid">
     <div id ="cell0" class="cell"></div>
     <div id ="cell1" class="cell"></div>
     <div id ="cell2" class="cell"></div>
@@ -69,9 +70,8 @@
     <div class="taken-cell"></div>
 </div>
 
-<div class="player1box flex-container">player1box</div>
-<div class="player2box flex-container">player2box</div>
-<div class="buttons flex-container">buttons</div>
+<button id="restart" >restart</button>
 
+</section>
 </body>
 </html>

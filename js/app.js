@@ -120,20 +120,33 @@ const restart = document.querySelector('.restart')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-document.querySelector('grid.cell').addEventListener('click', flipTurn);
-document.querySelector('div.reset').addEventListener('click', init);
+document.querySelector('div').addEventListener('click', handleMove);
+document.getElementById('restart').addEventListener('click', init);
 
 /*-------------------------------- Functions --------------------------------*/
 
-function flipTurn(e) {
+//function that turns grid into array, obtains index of clicked cell, checks if cell if free, returns if not, updates grid 
+function handleMove(e) {  
     const idx = parseInt(e.target.id.replace('sq', ''));
     if (grid[idx] || winner) return;
+    if (cells[idx + 7].innerHTML.contains('taken-cell')){
+        if (turn === 1) {
+            cells[idx].innerHTML.add('taken-cell')
+            cells[idx].innerHTML.add('1')
+            turn = 1
+        } else if (turn === -1) {
+            cells[idx].innerHTML.add('taken-cell')
+            cells[idx].innerHTML.add('-1')
+            turn = -1
+        }
+    }
     grid[idx] = turn;
     turn *= -1;
     winner = getWinner();
     render();
 }
 
+//function that loops through array (grid) and determines if a match to the wins array has been made. if a win isn't found and there are no nulls on the board, it's a tie
 function getWinner() {
     for (let i = 0; i < wins.length; i++) {
         if (Math.abs(grid[wins[i][0]] + grid[winningCombos[i][1]] + grid[wins[i][2]] + grid[wins[i][3]]) === 6) return grid[wins[i][0]];
@@ -142,24 +155,27 @@ function getWinner() {
     return "Tie";
 }
 
+//function that should take the idx on the clicked cell and marks the corresponding div with the player color, determines and return the winner
 function render() {
     grid.forEach(function(sq, idx) {
         cells[idx].style.background = playerColor[sq];
+        cells[idx].onclick = handleMove();
     });
     if (winner === "Tie") {
     resultMessage.innerHTML = "It's a tie!";
     } else if (winner) {
-    resultMessage.innerHTML = `Player ${playerColor[winner]} wins!`
+    resultMessage.innerHTML = `Player ${playerColor[winner]} wins!`;
     } else {
-    resultMessage.innerHTML = `Player ${playerColor[turn]}'s turn!` 
+    resultMessage.innerHTML = `Player ${playerColor[turn]}'s turn!`;
     }
 }
 
-init() {  
+//initializes a new game
+function init() { 
     grid = new Array(42).fill(null);
     turn = 1;
     winner = null;
     render();
-}
+} 
 
 init();

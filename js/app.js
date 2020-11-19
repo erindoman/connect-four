@@ -99,28 +99,67 @@ const wins = [
     [20, 26, 31, 38]
 ];
 
+const playerColor = {
+    '1': 'red',
+    '-1': 'yellow',
+    'null': 'white'
+};
+
 /*---------------------------- Variables (state) ----------------------------*/
 
-let turn = "Player 1"
+let playerTurn;
+let grid = [];
 let winner;
-let grid;
-let box1;
-let box2;
 
 /*------------------------ Cached Element References ------------------------*/
 
-const cells = document.querySelectorAll()
-
+const cells = Array.from(document.querySelectorAll('.grid div'))
+const resultMessage = document.querySelector('#result')
+const restart = document.querySelector('.restart')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-
-
-
+document.querySelector('grid.cell').addEventListener('click', flipTurn);
+document.querySelector('div.reset').addEventListener('click', init);
 
 /*-------------------------------- Functions --------------------------------*/
 
+function flipTurn(e) {
+    const idx = parseInt(e.target.id.replace('sq', ''));
+    if (grid[idx] || winner) return;
+    grid[idx] = turn;
+    turn *= -1;
+    winner = getWinner();
+    render();
+}
 
+function getWinner() {
+    for (let i = 0; i < wins.length; i++) {
+        if (Math.abs(grid[wins[i][0]] + grid[winningCombos[i][1]] + grid[wins[i][2]] + grid[wins[i][3]]) === 6) return grid[wins[i][0]];
+    }
+    if (grid.includes(null)) return null;
+    return "Tie";
+}
 
+function render() {
+    grid.forEach(function(sq, idx) {
+        cells[idx].style.background = playerColor[sq];
+    });
+    if (winner === "Tie") {
+    resultMessage.innerHTML = "It's a tie!";
+    } else if (winner) {
+    resultMessage.innerHTML = `Player ${playerColor[winner]} wins!`
+    } else {
+    resultMessage.innerHTML = `Player ${playerColor[turn]}'s turn!` 
+    }
+}
 
+init() {  
+    grid = new Array(42).fill(null);
+    turn = 1;
+    winner = null;
+    render();
+}
+
+init();

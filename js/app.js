@@ -117,31 +117,33 @@ const cells = Array.from(document.querySelectorAll('.grid div'))
 const resultMessage = document.querySelector('#result')
 const restart = document.querySelector('.restart')
 
-
 /*----------------------------- Event Listeners -----------------------------*/
 
-document.querySelector('div').addEventListener('click', handleMove);
+// document.querySelector('div').addEventListener('click', handleMove);
+document.querySelector('.grid').addEventListener('click', handleMove)
 document.getElementById('restart').addEventListener('click', init);
 
 /*-------------------------------- Functions --------------------------------*/
 
-//function that turns grid into array, obtains index of clicked cell, checks if cell if free, returns if not, updates grid 
+//function that turns grid into array, obtains index of clicked cell, checks if cell if free, returns if not, updates grid //updates state
 function handleMove(e) {  
-    const idx = parseInt(e.target.id.replace('sq', ''));
-    if (grid[idx] || winner) return;
-    if (cells[idx + 7].innerHTML.contains('taken-cell')){
-        if (turn === 1) {
-            cells[idx].innerHTML.add('taken-cell')
-            cells[idx].innerHTML.add('1')
-            turn = 1
-        } else if (turn === -1) {
-            cells[idx].innerHTML.add('taken-cell')
-            cells[idx].innerHTML.add('-1')
+    // console.log(e.target)
+    const index = parseInt(e.target.id.replace('cell', ''));
+    // console.log(index)
+    // console.log(!cells[index + 7].classList.contains('taken-cell'))
+    if (grid[index] || winner || !cells[index + 7].classList.contains('taken-cell')) {return};
+    if (turn === 1) {
+            cells[index].className += ' taken-cell' 
+            cells[index].className += ' 1'
             turn = -1
-        }
+    } else if (turn === -1) {
+            cells[index].className += ' taken-cell'
+            cells[index].className += ' -1'
+            turn = 1
     }
-    grid[idx] = turn;
-    turn *= -1;
+    console.log(cells[index + 7])
+    grid[index] = turn;
+    console.log(grid)
     winner = getWinner();
     render();
 }
@@ -149,7 +151,7 @@ function handleMove(e) {
 //function that loops through array (grid) and determines if a match to the wins array has been made. if a win isn't found and there are no nulls on the board, it's a tie
 function getWinner() {
     for (let i = 0; i < wins.length; i++) {
-        if (Math.abs(grid[wins[i][0]] + grid[winningCombos[i][1]] + grid[wins[i][2]] + grid[wins[i][3]]) === 6) return grid[wins[i][0]];
+        if (Math.abs(grid[wins[i][0]] + grid[wins[i][1]] + grid[wins[i][2]] + grid[wins[i][3]]) === 6) return grid[wins[i][0]];
     }
     if (grid.includes(null)) return null;
     return "Tie";
@@ -157,9 +159,8 @@ function getWinner() {
 
 //function that should take the idx on the clicked cell and marks the corresponding div with the player color, determines and return the winner
 function render() {
-    grid.forEach(function(sq, idx) {
-        cells[idx].style.background = playerColor[sq];
-        cells[idx].onclick = handleMove();
+    grid.forEach(function(sq, index) {
+        cells[index].style.background = playerColor[sq];
     });
     if (winner === "Tie") {
     resultMessage.innerHTML = "It's a tie!";

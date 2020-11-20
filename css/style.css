@@ -31,7 +31,7 @@ section.title {
   justify-content: flex-start;
   align-items: center;
   font-size: 20px;
-  border-radius: 15px 15px 0 0 ;
+  border-radius: 15px 15px 0 0;
 
 }
 
@@ -55,10 +55,6 @@ h2 {
   border-radius: 0 0 15px 15px;
 }
 
-div.taken-cell {
-  height: 0px;
-}
-
 div.cell {
   border: 1px solid #fccbcb;
   border-radius: 50%;
@@ -67,12 +63,19 @@ div.cell {
   height: 80%;
 }
 
+div.taken-cell {
+  border-radius: 50%
+}
+
 .player1 {
   background-color: red;
+  border-radius: 50%;
 }
 
 .player2 {
   background-color: yellow;
+  border-radius: 50%;
+
 }
 
 button {

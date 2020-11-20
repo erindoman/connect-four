@@ -100,8 +100,8 @@ const wins = [
 ];
 
 const playerColor = {
-    '1': 'red',
-    '-1': 'yellow',
+    '1': 'Red',
+    '-1': 'Yellow',
     'null': 'white'
 };
 
@@ -171,9 +171,9 @@ function render() {
     if (winner === "Tie") {
     resultMessage.innerHTML = "It's a tie!";
     } else if (winner) {
-    resultMessage.innerHTML = `Player ${playerColor[winner]} wins!`;
+    resultMessage.innerHTML = `${playerColor[winner].toUpperCase()} WINS!`;
     } else {
-    resultMessage.innerHTML = `Player ${playerColor[turn*-1]}'s turn!`;
+    resultMessage.innerHTML = `${playerColor[turn*-1]}'s turn!`;
     }
     
 } 

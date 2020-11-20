@@ -107,7 +107,6 @@ const playerColor = {
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let playerTurn;
 let grid = [];
 let winner;
 
@@ -141,7 +140,7 @@ function handleMove(e) {
             cells[index].className += ' -1'
             turn = 1
     }
-    console.log(cells[index + 7])
+    // console.log(cells[index + 7])
     grid[index] = turn;
     console.log(grid)
     winner = getWinner();
@@ -150,12 +149,19 @@ function handleMove(e) {
 
 //function that loops through array (grid) and determines if a match to the wins array has been made. if a win isn't found and there are no nulls on the board, it's a tie
 function getWinner() {
+    winner = null;
     for (let i = 0; i < wins.length; i++) {
-        if (Math.abs(grid[wins[i][0]] + grid[wins[i][1]] + grid[wins[i][2]] + grid[wins[i][3]]) === 6) return grid[wins[i][0]];
-    }
-    if (grid.includes(null)) return null;
-    return "Tie";
+        if (Math.abs(grid[wins[i][0]] + grid[wins[i][1]] + grid[wins[i][2]] + grid[wins[i][3]]) === 4) {
+            winner = grid[wins[i][0]];
+        } 
+    } 
+    return winner
 }
+
+// }  else if {
+//     grid.includes(null)) return null;
+//     return "Tie";
+    
 
 //function that should take the idx on the clicked cell and marks the corresponding div with the player color, determines and return the winner
 function render() {
@@ -167,15 +173,21 @@ function render() {
     } else if (winner) {
     resultMessage.innerHTML = `Player ${playerColor[winner]} wins!`;
     } else {
-    resultMessage.innerHTML = `Player ${playerColor[turn]}'s turn!`;
+    resultMessage.innerHTML = `Player ${playerColor[turn*-1]}'s turn!`;
     }
-}
+    
+} 
 
 //initializes a new game
 function init() { 
     grid = new Array(42).fill(null);
-    turn = 1;
+    turn = 1;    
     winner = null;
+    for (let i = 0; i <= grid.length -1; i++) {
+        // document.getElementsByClassName('taken-cell').remove('taken-cell')
+        cells[i].classList.remove("taken-cell")
+        console.log(cells[i])
+    }
     render();
 } 
 

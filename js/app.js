@@ -153,9 +153,9 @@ function getWinner() {
     for (let i = 0; i < wins.length; i++) {
         if (Math.abs(grid[wins[i][0]] + grid[wins[i][1]] + grid[wins[i][2]] + grid[wins[i][3]]) === 4) {
             winner = grid[wins[i][0]];
-        } 
+        }
     } 
-    return winner
+    return winner 
 }
 
 // }  else if {
@@ -174,8 +174,7 @@ function render() {
     resultMessage.innerHTML = `${playerColor[winner].toUpperCase()} WINS!`;
     } else {
     resultMessage.innerHTML = `${playerColor[turn*-1]}'s turn!`;
-    }
-    
+    }  
 } 
 
 //initializes a new game

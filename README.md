@@ -4,6 +4,8 @@
 
 Connect Four Pseudocode
 
+URL: http://erindoman-connectfour.surge.sh/
+
 1. Define the required constants
     1.1. Define every possible winning combination of Connect Four. There are 69 possible winning combinations in a 6x7 Connect Four grid. Each winning combo consists of four connecting indexes of the grid (horizontal, vertical, diagonal) that hold the same player value.  
 2. Define the required variables

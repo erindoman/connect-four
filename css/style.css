@@ -17,9 +17,7 @@ html {
 }
 
 section.wrapper {
-  /* padding: 100px 100px; */
   text-align: center;
-  width: 630px;
 }
 
 body {
@@ -101,10 +99,13 @@ button {
   border-radius: 7px;
 }
 
-@media only screen (min-width: 768px) {
-  body {
+@media only screen and (max-width: 800px) {
+  
+  section.wrapper{
+    max-width: 800px;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
   }
 }
+

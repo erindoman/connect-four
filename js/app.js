@@ -118,19 +118,16 @@ const restart = document.querySelector('.restart')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-// document.querySelector('div').addEventListener('click', handleMove);
 document.querySelector('.grid').addEventListener('click', handleMove)
 document.getElementById('restart').addEventListener('click', init);
 
 /*-------------------------------- Functions --------------------------------*/
 
-//function that turns grid into array, obtains index of clicked cell, checks if cell if free, returns if not, updates grid //updates state
+//function that takes the index of the clicked cell and determines if it is a free spot (index + 7 must have a 'taken-cell' class) and updates the state of the game by marking the cell with the player's class name and a 'taken-cell' class name.
+
 function handleMove(e) {  
-    // console.log(e.target)
     const index = parseInt(e.target.id.replace('cell', ''));
-    // console.log(index)
-    // console.log(!cells[index + 7].classList.contains('taken-cell'))
-    if (grid[index] || winner || !cells[index + 7].classList.contains('taken-cell')) {return};
+     if (grid[index] || winner || !cells[index + 7].classList.contains('taken-cell')) {return};
     if (turn === 1) {
             cells[index].className += ' taken-cell' 
             cells[index].className += ' 1'
@@ -140,14 +137,13 @@ function handleMove(e) {
             cells[index].className += ' -1'
             turn = 1
     }
-    // console.log(cells[index + 7])
     grid[index] = turn;
-    console.log(grid)
     winner = getWinner();
     render();
 }
 
-//function that loops through array (grid) and determines if a match to the wins array has been made. if a win isn't found and there are no nulls on the board, it's a tie
+//function that loops through the 'wins' array and determines if a single player matches 1 of the 4-in-a-row conditions. if true, this function returns the winner value of the first index array
+
 function getWinner() {
     winner = null;
     for (let i = 0; i < wins.length; i++) {
@@ -156,14 +152,10 @@ function getWinner() {
         }
     } 
     return winner 
-}
-
-// }  else if {
-//     grid.includes(null)) return null;
-//     return "Tie";
-    
+} 
 
 //function that should take the idx on the clicked cell and marks the corresponding div with the player color, determines and return the winner
+
 function render() {
     grid.forEach(function(sq, index) {
         cells[index].style.background = playerColor[sq];
@@ -177,13 +169,13 @@ function render() {
     }  
 } 
 
-//initializes a new game
+//function that initializes a new game
+
 function init() { 
     grid = new Array(42).fill(null);
     turn = 1;    
     winner = null;
     for (let i = 0; i <= grid.length -1; i++) {
-        // document.getElementsByClassName('taken-cell').remove('taken-cell')
         cells[i].classList.remove("taken-cell")
         console.log(cells[i])
     }

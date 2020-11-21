@@ -100,9 +100,9 @@ const wins = [
 ];
 
 const playerColor = {
-    '1': 'Red',
-    '-1': 'Yellow',
-    'null': 'white'
+    '1': 'Pink',
+    '-1': 'Grey',
+    'null': ''
 };
 
 /*---------------------------- Variables (state) ----------------------------*/

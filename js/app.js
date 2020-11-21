@@ -142,19 +142,20 @@ function handleMove(e) {
     render();
 }
 
-//function that loops through the 'wins' array and determines if a single player matches 1 of the 4-in-a-row conditions. if true, this function returns the winner value of the first index array
+//function that loops through the 'wins' array and determines if a single player matches 1 of the 4-in-a-row conditions. if true, this function returns the winner value of the first index in the winning array
 
 function getWinner() {
-    winner = null;
-    for (let i = 0; i < wins.length; i++) {
-        if (Math.abs(grid[wins[i][0]] + grid[wins[i][1]] + grid[wins[i][2]] + grid[wins[i][3]]) === 4) {
+    winner = null
+        for (let i = 0; i < wins.length; i++) {
+            if (Math.abs(grid[wins[i][0]] + grid[wins[i][1]] + grid[wins[i][2]] + grid[wins[i][3]]) === 4) {
             winner = grid[wins[i][0]];
-        }
-    } 
-    return winner 
-} 
+            } else if (!grid.includes(null))
+        return "Tie";
+        } return winner 
+}
 
-//function that should take the idx on the clicked cell and marks the corresponding div with the player color, determines and return the winner
+
+//function that takes the index on the clicked cell and renders the corresponding div with the player color, updates the turn message, and if a winner/tie has been determined updates to a win/tie message
 
 function render() {
     grid.forEach(function(sq, index) {
@@ -169,7 +170,7 @@ function render() {
     }  
 } 
 
-//function that initializes a new game
+//function that initializes a new game, clears the grid and removes given class names
 
 function init() { 
     grid = new Array(42).fill(null);

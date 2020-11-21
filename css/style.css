@@ -23,7 +23,6 @@ section.wrapper {
 body {
   height: 100vh;
   display: flex;
-  margin: 0;
   background-color: #838383;
   justify-content: center;
   align-items: center;
@@ -31,13 +30,9 @@ body {
 
 section.title {
   background-color: #d9adad;
-  flex-direction: row;
-  flex-direction: row;
-  justify-content: flex-start;
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
   border-radius: 15px 15px 0 0;
-  grid-area: title;
   color: white;
   text-shadow: 1px 1px #8b4e4e;
   padding: 10px 0 0 10px;
@@ -47,41 +42,26 @@ h2 {
   background-color:#d9adad;
   color: white;
   text-shadow: 1px 1px #8b4e4e;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
   font-size: 20px;
-  margin: 0;
-  padding: 0 0 10px 10px;
-  
-  grid-area: title;
-}
+  padding: 5px 0 10px 10px;
+  }
 
 .grid {
-  grid-area: grid;
   display: grid;
   background-color: #d9adad7c;
   grid-template-rows: repeat(6, 10vmin);
   grid-template-columns: repeat(7, 10vmin);
   border-radius: 0 0 15px 15px;
-  grid-gap: .1vmin;
 }
 
 div.cell {
-  position: relative;
   border: 1px solid #fccbcb;
   border-radius: 50%;
   margin: 10%;
-  width: 80%;
-  height: 80%;
 }
 
 .cell:hover {
-  background-color: #838383a2;
-}
-
-div.taken-cell {
-  border-radius: 50%;
+  background-color: #cfc3c38c;
 }
 
 button {
@@ -89,13 +69,10 @@ button {
   color: white;
   text-shadow: 1px 1px #8b4e4e;
   border: none;
-  box-shadow: 1px 1px #8b4e4e;;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 25px;
+  box-shadow: 1px 1px #8b4e4e;
+  font-size: 20px;
   margin: 10px;
-  padding: 5px;
+  padding: 5px 15px;
   border-radius: 7px;
 }
 

@@ -154,7 +154,6 @@ function getWinner() {
         } return winner 
 }
 
-
 //function that takes the index on the clicked cell and renders the corresponding div with the player color, updates the turn message, and if a winner/tie has been determined updates to a win/tie message
 
 function render() {
@@ -178,7 +177,6 @@ function init() {
     winner = null;
     for (let i = 0; i <= grid.length -1; i++) {
         cells[i].classList.remove("taken-cell")
-        console.log(cells[i])
     }
     render();
 } 

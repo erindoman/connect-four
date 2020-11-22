@@ -1,10 +1,59 @@
 # connect-four
 
+<b>Connect Four</b>
+November 2020
+URL: http://erindoman-connectfour.surge.sh/
+
+This is a traditional 1v1 Connect Four game with no artificial intelligence. There are two colors, grey and pink (one per player), which alternate in turn of what is played on the board. The goal is for one player to connect four of their chips in a row (either horizontally, vertically, or diagonally) to win the game.
+
+I chose to create this game after I had previously built a tic-tac-toe board. I found that a lot of the logic was similar between the two games, but Connect Four was significantly more complex. This was a great way to practice the skills that I learned from the tic-tac-toe project while pushing myself to build something more complicated.
+
+-----------------------------------------------
+
+<b>Images</b>
+Original wireframe:
 <img src="https://i.imgur.com/yuWjDrp.png" />
 
-Connect Four Pseudocode
+On load:
+<img src="https://i.imgur.com/XUsMMIy.png" />
 
-URL: http://erindoman-connectfour.surge.sh/
+Grey win:
+<img src="https://i.imgur.com/LxoQ7Rc.png" />
+
+Pink win:
+<img src="https://i.imgur.com/4T7Ud1i.png" />
+
+Tie game:
+<img src="https://i.imgur.com/hXTwnYT.png" />
+
+-----------------------------------------------
+
+<b>Technologies Used</b>
+JavaScript, CSS, HTML
+
+-----------------------------------------------
+
+<b>Getting Started</b>
+
+This game is played with 2 players, alternating turns. Grey always goes first, pink always goes second. 
+
+To play, click on one the cells in the bottom most row to place your chip. Chips can only be placed in the lowest open cell of each column. Taking turns, strategically place your chips to block the other player and build a four-in-a-row win, either vertically, horizontally, or diagonally. The first player to get four chips in a row wins!
+
+To restart the game, click on the restart button at the bottom of the grid.
+
+-----------------------------------------------
+
+<b>Next Steps</b>
+
+For future releases of this game, I plan to include to chip repositories (one for each player) that displayes their remaining chips, decreasing by one each time they play (see original wireframe for context).
+
+I also plan to add a dark mode, which would change the colors of the game at the touch of a button.
+
+This game could also be improved with the addition of sound effects when a chip is played or when the game is reset.
+
+-----------------------------------------------
+
+<b>Original Connect Four Pseudocode</b>
 
 1. Define the required constants
     1.1. Define every possible winning combination of Connect Four. There are 69 possible winning combinations in a 6x7 Connect Four grid. Each winning combo consists of four connecting indexes of the grid (horizontal, vertical, diagonal) that hold the same player value.  

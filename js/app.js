@@ -162,11 +162,11 @@ function render() {
         cells[index].style.background = playerColor[sq];
     });
     if (winner === "Tie") {
-    resultMessage.innerHTML = "It's a tie!";
+        resultMessage.innerHTML = "It's a tie!";
     } else if (winner) {
-    resultMessage.innerHTML = `${playerColor[winner].toUpperCase()} WINS!`;
+        resultMessage.innerHTML = `${playerColor[winner].toUpperCase()} WINS!`;
     } else {
-    resultMessage.innerHTML = `${playerColor[turn*-1]}'s turn!`;
+        resultMessage.innerHTML = `${playerColor[turn*-1]}'s turn!`;
     }  
 } 
 

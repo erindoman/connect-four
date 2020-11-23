@@ -1,6 +1,6 @@
 # connect-four
 
-<b>Connect Four</b>
+### Connect Four
 
 November 2020
 
@@ -12,7 +12,7 @@ I chose to create this game after I had previously built a tic-tac-toe board. I 
 
 -----------------------------------------------
 
-<b>Images</b>
+### Images
 
 Original wireframe:
 <img src="https://i.imgur.com/yuWjDrp.png" />
@@ -31,13 +31,13 @@ Tie game:
 
 -----------------------------------------------
 
-<b>Technologies Used</b>
+### Technologies Used
 
 JavaScript, CSS, HTML
 
 -----------------------------------------------
 
-<b>Getting Started</b>
+### Getting Started
 
 Play here: http://erindoman-connectfour.surge.sh/
 
@@ -49,7 +49,7 @@ To restart the game, click on the restart button at the bottom of the grid.
 
 -----------------------------------------------
 
-<b>Next Steps</b>
+### Next Steps<
 
 For future releases of this game, I plan to include to chip repositories (one for each player) that displayes their remaining chips, decreasing by one each time they play their turn (see original wireframe for context).
 
@@ -59,7 +59,7 @@ This game could also be improved with the addition of sound effects when a chip 
 
 -----------------------------------------------
 
-<b>Original Connect Four Pseudocode</b>
+### Original Connect Four Pseudocode
 
 1. Define the required constants
     

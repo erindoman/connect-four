@@ -11,19 +11,19 @@ I chose to create this game after I had previously built a tic-tac-toe board. I 
 
 ### Images
 
-Original wireframe:
-<img src="https://i.imgur.com/yuWjDrp.png" />
+**Original wireframe:**
+![Original wirefram](https://i.imgur.com/yuWjDrp.png)
 
-On load:
+**On load:**
 <img src="https://i.imgur.com/XUsMMIy.png" />
 
-Grey win:
+**Grey win:**
 <img src="https://i.imgur.com/LxoQ7Rc.png" />
 
-Pink win:
+**Pink win:**
 <img src="https://i.imgur.com/4T7Ud1i.png" />
 
-Tie game:
+**Tie game:**
 <img src="https://i.imgur.com/hXTwnYT.png" />
 
 -----------------------------------------------
@@ -84,25 +84,25 @@ This game could also be improved with the addition of sound effects when a chip 
    
     4.1. Initialize a new game:
 
-        4.1.1. The grid should be empty (6x7 grid of empty cells). The array of the grid should be an array of 42 nulls.
+        * The grid should be empty (6x7 grid of empty cells). The array of the grid should be an array of 42 nulls.
 
-        4.1.2. Each player’s game-chip repository should have 21 chips of their assigned color.
+        * Each player’s game-chip repository should have 21 chips of their assigned color.
         
-        4.1.3. Initialize player 1 to play first.
+        * Initialize player 1 to play first.
         
-        4.1.4. No winner/tie game should be declared.
+        * No winner/tie game should be declared.
     
     4.2 Render the grid:
 
-        4.2.1. Loop through the grid array and assign the index of the iteration to the corresponding mapped value of the grid array.
+        * Loop through the grid array and assign the index of the iteration to the corresponding mapped value of the grid array.
     
     4.3. Render the message:
        
-        4.3.1. If no winner has been identified and there are still blank (null) cells on the grid, continue to prompt each player, one at a time, to play their remaining chips.
+        * If no winner has been identified and there are still blank (null) cells on the grid, continue to prompt each player, one at a time, to play their remaining chips.
        
-        4.3.2. If no winner has been identified and there are no blank (null) cells remaining in the grid, return the message declaring a tie game.
+        * If no winner has been identified and there are no blank (null) cells remaining in the grid, return the message declaring a tie game.
        
-        4.3.3. If one of the possible winning combinations has been identified, return the message declaring the winner (either player 1 or player 2).
+        * If one of the possible winning combinations has been identified, return the message declaring the winner (either player 1 or player 2).
     
     4.4. Wait for the user to click a cell
 

@@ -113,12 +113,12 @@ let winner;
 /*------------------------ Cached Element References ------------------------*/
 
 const cells = Array.from(document.querySelectorAll('.grid div'))
-const resultMessage = document.querySelector('#result')
-const restart = document.querySelector('.restart')
+const resultMessage = document.querySelector('#result');
+const restart = document.querySelector('.restart');
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-document.querySelector('.grid').addEventListener('click', handleMove)
+document.querySelector('.grid').addEventListener('click', handleMove);
 document.getElementById('restart').addEventListener('click', init);
 
 /*-------------------------------- Functions --------------------------------*/
@@ -127,7 +127,7 @@ document.getElementById('restart').addEventListener('click', init);
 
 function handleMove(e) {  
     const index = parseInt(e.target.id.replace('cell', ''));
-     if (grid[index] || winner || !cells[index + 7].classList.contains('taken-cell')) {return};
+    if (grid[index] || winner || !cells[index + 7].classList.contains('taken-cell')) {return};
     if (turn === 1) {
             cells[index].className += ' taken-cell' 
             cells[index].className += ' 1'
@@ -151,7 +151,8 @@ function getWinner() {
             winner = grid[wins[i][0]];
             } else if (!grid.includes(null))
         return "Tie";
-        } return winner 
+        } 
+        return winner; 
 }
 
 //function that takes the index on the clicked cell and renders the corresponding div with the player color, updates the turn message, and if a winner/tie has been determined updates to a win/tie message
@@ -176,7 +177,7 @@ function init() {
     turn = 1;    
     winner = null;
     for (let i = 0; i <= grid.length -1; i++) {
-        cells[i].classList.remove("taken-cell")
+        cells[i].classList.remove("taken-cell");
     }
     render();
 } 

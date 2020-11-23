@@ -6,7 +6,7 @@ November 2020
 
 URL: http://erindoman-connectfour.surge.sh/
 
-This is a traditional 1v1 Connect Four game with no artificial intelligence. There are two colors, grey and pink (one per player), which alternate in turn of what is played on the board. The goal is for one player to connect four of their chips in a row (either horizontally, vertically, or diagonally) to win the game.
+This is a traditional 1v1 Connect Four game with no artificial intelligence. Two players take turns placing their assigned "chips" (either pink or grey, depending on who plays first) on the board with the goal of connecting four chips in a row (horizontally, vertically, or diagonally) to win the game.
 
 I chose to create this game after I had previously built a tic-tac-toe board. I found that a lot of the logic was similar between the two games, but Connect Four was significantly more complex. This was a great way to practice the skills that I learned from the tic-tac-toe project while pushing myself to build something more complicated.
 
@@ -41,7 +41,7 @@ JavaScript, CSS, HTML
 
 This game is played with 2 players, alternating turns. Grey always goes first, pink always goes second. 
 
-To play, click on one the cells in the bottom most row to place your chip. Chips can only be placed in the lowest open cell of each column. Taking turns, strategically place your chips to block the other player and build a four-in-a-row win, either vertically, horizontally, or diagonally. The first player to get four chips in a row wins!
+To play, start by clicking on one the cells in the bottom most row of a column to place your chip. Chips can only be placed in the lowest open cell of each column. Taking turns, strategically place your chips to block the other player and build a four-in-a-row win, either vertically, horizontally, or diagonally. The first player to get four chips in a row wins!
 
 To restart the game, click on the restart button at the bottom of the grid.
 
@@ -49,7 +49,7 @@ To restart the game, click on the restart button at the bottom of the grid.
 
 <b>Next Steps</b>
 
-For future releases of this game, I plan to include to chip repositories (one for each player) that displayes their remaining chips, decreasing by one each time they play (see original wireframe for context).
+For future releases of this game, I plan to include to chip repositories (one for each player) that displayes their remaining chips, decreasing by one each time they play their turn (see original wireframe for context).
 
 I also plan to add a dark mode, which would change the colors of the game at the touch of a button.
 

@@ -39,6 +39,8 @@ JavaScript, CSS, HTML
 
 <b>Getting Started</b>
 
+Play here: http://erindoman-connectfour.surge.sh/
+
 This game is played with 2 players, alternating turns. Grey always goes first, pink always goes second. 
 
 To play, start by clicking on one the cells in the bottom most row of a column to place your chip. Chips can only be placed in the lowest open cell of each column. Taking turns, strategically place your chips to block the other player and build a four-in-a-row win, either vertically, horizontally, or diagonally. The first player to get four chips in a row wins!

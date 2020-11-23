@@ -15,16 +15,16 @@ I chose to create this game after I had previously built a tic-tac-toe board. I 
 ![Original wirefram](https://i.imgur.com/yuWjDrp.png)
 
 **On load:**
-<img src="https://i.imgur.com/XUsMMIy.png" />
+![On load](https://i.imgur.com/XUsMMIy.png)
 
 **Grey win:**
-<img src="https://i.imgur.com/LxoQ7Rc.png" />
+![Grey win](https://i.imgur.com/LxoQ7Rc.png)
 
 **Pink win:**
-<img src="https://i.imgur.com/4T7Ud1i.png" />
+![Pink win](https://i.imgur.com/4T7Ud1i.png)
 
 **Tie game:**
-<img src="https://i.imgur.com/hXTwnYT.png" />
+![Tie game](https://i.imgur.com/hXTwnYT.png)
 
 -----------------------------------------------
 

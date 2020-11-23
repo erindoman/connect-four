@@ -12,7 +12,7 @@ I chose to create this game after I had previously built a tic-tac-toe board. I 
 ### Images
 
 **Original wireframe:**
-![Original wirefram](https://i.imgur.com/yuWjDrp.png)
+![Original wireframe](https://i.imgur.com/yuWjDrp.png)
 
 **On load:**
 ![On load](https://i.imgur.com/XUsMMIy.png)

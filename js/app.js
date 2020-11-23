@@ -123,7 +123,7 @@ document.getElementById('restart').addEventListener('click', init);
 
 /*-------------------------------- Functions --------------------------------*/
 
-//function that takes the index of the clicked cell and determines if it is a free spot (index + 7 must have a 'taken-cell' class) and updates the state of the game by marking the cell with the player's class name and a 'taken-cell' class name.
+//function that takes the index of the clicked cell and determines if it is a free spot (index + 7 must have a 'taken-cell' class) and updates the state of the game by marking the cell with the player's class name and a 'taken-cell' class name
 
 function handleMove(e) {  
     const index = parseInt(e.target.id.replace('cell', ''));

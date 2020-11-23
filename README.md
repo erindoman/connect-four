@@ -1,7 +1,4 @@
-# connect-four
-
-### Connect Four
-
+# Connect Four
 November 2020
 
 URL: http://erindoman-connectfour.surge.sh/
@@ -49,7 +46,7 @@ To restart the game, click on the restart button at the bottom of the grid.
 
 -----------------------------------------------
 
-### Next Steps<
+### Next Steps
 
 For future releases of this game, I plan to include to chip repositories (one for each player) that displayes their remaining chips, decreasing by one each time they play their turn (see original wireframe for context).
 
